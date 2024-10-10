@@ -1,0 +1,38 @@
+h1 {
+  border: solid;
+  font-size: 12svh;
+  height: 100svh;
+}
+.lightpink {
+  background-color: lightpink;
+  width: 50%;
+}
+
+.p1 {
+  font-size: 18px;
+}
+
+.p2 {
+  font-size: 3svw;
+}
+.p3 {
+  font-size: 5svh;
+}
+.lightblue {
+  background-color: lightblue;
+  font-size: 32px;
+}
+.p4 {
+  font-size: 18px;
+}
+.p5 {
+  font-size: 100%;
+}
+.p6 {
+  font-size: 1rem;
+}
+h2 {
+  border: solid orange;
+  border-radius: 8svw;
+  border-top-width: 50svh;
+}
