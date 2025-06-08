@@ -1,0 +1,17 @@
+### Benutzer registrieren
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "jonny",
+  "password": "meinpasswort123"
+}
+
+### Benutzer einloggen
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "randy",
+  "password": "meinpasswort123"
+}
