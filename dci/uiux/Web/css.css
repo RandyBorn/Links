@@ -1,0 +1,365 @@
+/* Farben und Variablen */
+:root {
+  --bg: #153352;
+  --text: #e0e1dd;
+  --accent: #ff6f61;
+  --card-bg: #1b263b;
+  --shadow: rgba(0, 0, 0, 0.7);
+  --fade-speed: 1s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--card-bg);
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px var(--shadow);
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--accent);
+}
+
+nav a:hover::after,
+nav a:focus::after {
+  width: 100%;
+}
+
+/* Platz für die Navigation */
+body {
+  padding-top: 70px;
+}
+
+/* Header mit Typing Animation */
+header {
+  text-align: center;
+  padding: 4rem 2rem 6rem 2rem;
+  background: linear-gradient(135deg, #1b263b, #415a77);
+  position: relative;
+  overflow: hidden;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.1em;
+  font-weight: 900;
+  color: var(--accent);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.cursor {
+  display: inline-block;
+  background-color: var(--accent);
+  margin-left: 2px;
+  width: 8px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--text);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Section Überschriften */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  text-align: center;
+}
+
+/* Abschnitte */
+section {
+  max-width: 900px;
+  margin: 3rem auto 4rem auto;
+  padding: 0 1rem;
+}
+
+/* Fade-in Effekt */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--fade-speed) ease, transform var(--fade-speed) ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Themen Cards */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 6px 15px var(--shadow);
+  user-select: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  outline-offset: 4px;
+}
+
+.card:hover,
+.card:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px var(--accent);
+  background: linear-gradient(135deg, #ff6f61 0%, #ff998f 100%);
+  color: #fff;
+  outline: none;
+}
+
+/* Fakten & Zahlen Liste */
+#statistics ul,
+#actions ul {
+  list-style: inside disc;
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+#actions ul {
+  list-style: inside square;
+}
+
+/* Skills Balken */
+.skills .skill-bar {
+  margin-bottom: 1.3rem;
+}
+
+.skill-bar span {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.bar {
+  background-color: #223554;
+  border-radius: 50px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.fill {
+  height: 100%;
+  width: 0;
+  border-radius: 50px;
+  transition: width 2s ease;
+}
+
+/* Verschiedene Farben für Skills */
+.fill.sustainability {
+  background: linear-gradient(90deg, #a8e063, #56ab2f);
+}
+
+.fill.education {
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+}
+
+.fill.peace {
+  background: linear-gradient(90deg, #fddb92, #d1fdff);
+}
+
+/* Kontaktformular */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input,
+textarea {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  resize: vertical;
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--accent);
+}
+
+button {
+  background-color: var(--accent);
+  color: #fff;
+  padding: 0.85rem 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+button:focus {
+  background-color: #e85c50;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(13, 27, 42, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+  z-index: 2000;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 20px var(--shadow);
+  color: var(--text);
+  position: relative;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: 900;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #ff998f;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--card-bg);
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    margin: 2rem 1rem 3rem 1rem;
+  }
+}

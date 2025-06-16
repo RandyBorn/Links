@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Globale Themen Portfolio</title>
+    <link rel="stylesheet" href="css.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#home">Start</a></li>
+        <li><a href="#overview">Überblick</a></li>
+        <li><a href="#topics">Themen</a></li>
+        <li><a href="#statistics">Statistiken</a></li>
+        <li><a href="#actions">Was du tun kannst</a></li>
+        <li><a href="#skills">Wichtige Bereiche</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <header id="home">
+      <h1><span id="typed-text"></span><span class="cursor">|</span></h1>
+      <p>Wissen. Verstehen. Handeln. Für eine bessere Welt.</p>
+    </header>
+
+    <section id="overview" class="fade-in">
+      <h2>Warum sind globale Themen wichtig?</h2>
+      <p>
+        Unsere Welt steht vor großen Herausforderungen: Klimawandel, soziale
+        Ungleichheit, technologische Veränderungen und vieles mehr. Nur mit
+        Wissen und Engagement können wir gemeinsam Lösungen finden.
+      </p>
+    </section>
+
+    <section id="topics" class="projects">
+      <h2>Globale Themen</h2>
+      <div
+        class="card"
+        tabindex="0"
+        onclick="openModal('Klimawandel', 'Der Klimawandel führt zu steigenden Temperaturen, extremen Wetterlagen und bedroht unsere Ökosysteme. Reduktion von CO2 ist entscheidend.')"
+      >
+        🌍 Klimawandel
+      </div>
+      <div
+        class="card"
+        tabindex="0"
+        onclick="openModal('Künstliche Intelligenz', 'KI verändert Wirtschaft und Gesellschaft – mit Chancen, aber auch Risiken für Privatsphäre und Arbeitsplätze.')"
+      >
+        🤖 Künstliche Intelligenz
+      </div>
+      <div
+        class="card"
+        tabindex="0"
+        onclick="openModal('Datenschutz', 'Mit der Digitalisierung wachsen Herausforderungen für den Schutz persönlicher Daten. Jeder hat ein Recht auf Privatsphäre.')"
+      >
+        🔐 Datenschutz
+      </div>
+      <div
+        class="card"
+        tabindex="0"
+        onclick="openModal('Wasserkrise', 'Sauberes Wasser wird knapp. Schutz und nachhaltige Nutzung sind essenziell.')"
+      >
+        💧 Wasserkrise
+      </div>
+      <div
+        class="card"
+        tabindex="0"
+        onclick="openModal('Bildung', 'Bildung ist der Schlüssel für Chancen und Fortschritt. Zugang muss für alle gewährleistet sein.')"
+      >
+        📚 Bildung
+      </div>
+      <div
+        class="card"
+        tabindex="0"
+        onclick="openModal('Frieden & Menschenrechte', 'Frieden ist Grundlage für Entwicklung. Menschenrechte schützen die Würde und Freiheit.')"
+      >
+        🕊️ Frieden
+      </div>
+    </section>
+
+    <section id="statistics" class="fade-in">
+      <h2>Fakten & Zahlen</h2>
+      <ul>
+        <li>
+          Über 1 Milliarde Menschen haben keinen Zugang zu sauberem Trinkwasser.
+        </li>
+        <li>
+          Die globale Durchschnittstemperatur ist seit 1880 um ca. 1°C
+          gestiegen.
+        </li>
+        <li>Datenschutzverletzungen nehmen jährlich um über 30% zu.</li>
+        <li>
+          Mehr als 260 Millionen Kinder weltweit haben keinen Zugang zu
+          Schulbildung.
+        </li>
+        <li>
+          Friedenskonflikte dauern durchschnittlich 7 Jahre und betreffen
+          Millionen Menschen.
+        </li>
+      </ul>
+    </section>
+
+    <section id="actions" class="fade-in">
+      <h2>Was kannst du tun?</h2>
+      <ul>
+        <li>
+          <strong>Reduziere deinen CO2-Fußabdruck:</strong> Nutze öffentliche
+          Verkehrsmittel, reduziere Fleischkonsum, spare Energie.
+        </li>
+        <li>
+          <strong>Schütze deine Daten:</strong> Verwende starke Passwörter,
+          prüfe Datenschutzrichtlinien, sei vorsichtig bei Online-Diensten.
+        </li>
+        <li>
+          <strong>Engagiere dich lokal:</strong> Unterstütze
+          Umweltschutzinitiativen, bilde dich weiter und teile Wissen.
+        </li>
+        <li>
+          <strong>Fördere Bildung:</strong> Spende an Bildungsorganisationen
+          oder unterstütze Mentoring-Programme.
+        </li>
+        <li>
+          <strong>Setze dich für Frieden ein:</strong> Respektiere
+          Menschenrechte und unterstütze friedliche Konfliktlösung.
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills" class="skills fade-in">
+      <h2>Wichtige globale Bereiche</h2>
+
+      <div class="skill-bar">
+        <span>Nachhaltigkeit</span>
+        <div class="bar">
+          <div class="fill sustainability" data-width="85%"></div>
+        </div>
+      </div>
+
+      <div class="skill-bar">
+        <span>Bildungsgerechtigkeit</span>
+        <div class="bar">
+          <div class="fill education" data-width="75%"></div>
+        </div>
+      </div>
+
+      <div class="skill-bar">
+        <span>Frieden & Menschenrechte</span>
+        <div class="bar"><div class="fill peace" data-width="90%"></div></div>
+      </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+      <h2>Kontaktiere uns</h2>
+      <form onsubmit="sendMail(event)">
+        <input type="text" id="name" placeholder="Dein Name" required />
+        <input type="email" id="email" placeholder="Deine Email" required />
+        <textarea
+          id="message"
+          placeholder="Wie möchtest du die Welt verändern?"
+          required
+        ></textarea>
+        <button type="submit">Senden</button>
+      </form>
+    </section>
+
+    <div
+      id="modal"
+      class="modal hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-desc"
+    >
+      <div class="modal-content">
+        <button class="close" aria-label="Schließen" onclick="closeModal()">
+          &times;
+        </button>
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Globale Themen Plattform</p>
+    </footer>
+
+    <script>
+      // Smooth scroll is default in CSS: scroll-behavior: smooth;
+
+      // Typing Animation
+      const typedText = document.getElementById("typed-text");
+      const text = "Globale Themen für eine bessere Zukunft";
+      let index = 0;
+      function typing() {
+        if (index < text.length) {
+          typedText.textContent += text.charAt(index);
+          index++;
+          setTimeout(typing, 80);
+        }
+      }
+      window.onload = typing;
+
+      // Modal Logik
+      const modal = document.getElementById("modal");
+      const modalTitle = document.getElementById("modal-title");
+      const modalDesc = document.getElementById("modal-desc");
+
+      function openModal(title, desc) {
+        modalTitle.textContent = title;
+        modalDesc.textContent = desc;
+        modal.classList.remove("hidden");
+        modal.classList.add("show");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        modal.classList.remove("show");
+        modal.classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+
+      // Close modal on ESC
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("show")) {
+          closeModal();
+        }
+      });
+
+      // Skills Animation beim Scrollen
+      const skillFills = document.querySelectorAll(".fill");
+
+      function animateSkills() {
+        const triggerBottom = window.innerHeight * 0.9;
+        skillFills.forEach((fill) => {
+          const barTop = fill.getBoundingClientRect().top;
+          if (barTop < triggerBottom) {
+            fill.style.width = fill.getAttribute("data-width");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", animateSkills);
+
+      // Fade-in Animation beim Scrollen
+      const faders = document.querySelectorAll(".fade-in");
+
+      function checkFade() {
+        const triggerBottom = window.innerHeight * 0.85;
+        faders.forEach((fader) => {
+          const top = fader.getBoundingClientRect().top;
+          if (top < triggerBottom) {
+            fader.classList.add("visible");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", checkFade);
+      window.addEventListener("load", checkFade);
+
+      // Formular Mailto Link
+      function sendMail(e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const subject = encodeURIComponent(
+          "Kontaktformular Nachricht von " + name
+        );
+        const body = encodeURIComponent(
+          "Name: " + name + "\nEmail: " + email + "\n\nNachricht:\n" + message
+        );
+
+        window.location.href = `mailto:kontakt@beispiel.de?subject=${subject}&body=${body}`;
+      }
+    </script>
+  </body>
+</html>
